@@ -1,4 +1,6 @@
-# Kaleo Rails Engineer Candidate Interview Project
+# Batteries 911 Rails Engineer Candidate Interview Project
+
+(This is a fork of the [Kaleo Rails Engineer Candidate Interview Project](https://github.com/batteries911/rails-interview-project).)
 
 Thanks for taking the time to complete this exercise. We're excited that you're considering joining our amazing team.
 
@@ -19,14 +21,9 @@ A Tenant is a consumer of the API you are going to write. A db/seeds.rb file is 
 *   Don't return private Questions in the API response.
 *   Require every API request to include a valid Tenant API key, and return an HTTP code of your choice if the request does not include a valid key.
 *   Track API request counts per Tenant.
-*   Add an HTML dashboard page as the root URL that shows the total number of Users, Questions, and Answers in the system, as well as Tenant API request counts for all Tenants.  Style it enough to not assault a viewer's sensibilities.
 *   Add tests around the code you write as you deem appropriate. Assume that the API cannot be changed once it's released and test accordingly.
 *   You are welcome to add any models or other code you think you need, as well as any gems.
-
-## Extra credit features you might consider:
-
-*   Allow adding a query parameter to the API request to select only Questions that contain the query term(s).  Return an appropriate HTML status code if no results are found.
-*   Add a piece of middleware to throttle API requests on a per-Tenant basis. After the first 100 requests per day, throttle to 1 request per 10 seconds.
+*   You are also free the modify the existing code however you see fit.
 
 ## Project Setup
 
@@ -44,4 +41,4 @@ You should see this same information.
 
 ## Submitting your project
 
-Send us a zip file of the whole project for us to evaluate it.  If you need to add any additional instructions to the README please put them at the very top of that file and mention.  Expect to discuss your design decisions during the interview.
+Fork this repo and give us access to your fork.  If you need to add any additional instructions to the README please put them at the very top of that file and mention.  Expect to discuss your design decisions during the interview.
