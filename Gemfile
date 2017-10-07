@@ -6,6 +6,7 @@ gem 'rails', '~> 4.2.4'
 
 # ActiveRecord
 gem 'sqlite3'
+gem 'hairtrigger'
 
 # Asset processing
 gem 'sass-rails'

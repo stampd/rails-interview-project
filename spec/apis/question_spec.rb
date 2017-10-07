@@ -32,6 +32,16 @@ RSpec.describe Question, type: :request do
         questions = body.find_all { |data| data[:private] == true }
         expect(questions).to be_empty
       end
+
+      it 'should increment Tenant access count' do
+        expect(tenant.access_count).to eq(0)
+
+        get '/api/v1/questions', nil, {'Authorization' => tenant.api_key}
+
+        expect(response.status).to eq(200)
+        tenant.reload
+        expect(tenant.access_count).to eq(1)
+      end
     end
 
     context 'invalid tenant' do

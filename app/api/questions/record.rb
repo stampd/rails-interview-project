@@ -5,6 +5,7 @@ module Questions
     resource :questions do
       before do
         access_denied!('Key does not exist') unless current_tenant
+        current_tenant.increment!(:access_count)
       end
 
       desc 'Get questions'
