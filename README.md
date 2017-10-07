@@ -1,3 +1,9 @@
+# Additional Notes
+
+* Tenant Api Key should be passed in headers['Authorization']
+* The swagger UI can be accessed via localhost:[port]/api/v1. For swagger usage, the first Tenant is used and will be incremented.
+ 
+
 # Batteries 911 Rails Engineer Candidate Interview Project
 
 (This is a fork of the [Kaleo Rails Engineer Candidate Interview Project](https://github.com/batteries911/rails-interview-project).)
