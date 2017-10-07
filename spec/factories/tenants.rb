@@ -9,19 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-class Tenant < ActiveRecord::Base
-  include Grape::Entity::DSL
-  entity :id, :name,
-         :created_at, :updated_at
-
-  before_create :generate_api_key
-
-  validates_presence_of :api_key
-  
-  private
-
-  def generate_api_key
-    self.api_key = SecureRandom.hex(16)
+FactoryGirl.define do
+  factory :tenant do
+    name 'tenant'
+    api_key 'key'
   end
-
 end

@@ -10,15 +10,10 @@
 #  updated_at  :datetime         not null
 #
 
-class Answer < ActiveRecord::Base
-  include Grape::Entity::DSL
-  entity :id, :body, :question_id,
-         :created_at, :updated_at do
-    expose :answerer, using: User::Entity
+FactoryGirl.define do
+  factory :answer do
+    body 'test'
+    question { FactoryGirl.create(:question) }
+    answerer { FactoryGirl.create(:user) }
   end
-
-  belongs_to :question
-  belongs_to :answerer, class_name: 'User', foreign_key: :user_id, inverse_of: :answers
-
-
 end

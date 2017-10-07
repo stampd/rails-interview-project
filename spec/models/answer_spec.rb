@@ -10,15 +10,9 @@
 #  updated_at  :datetime         not null
 #
 
-class Answer < ActiveRecord::Base
-  include Grape::Entity::DSL
-  entity :id, :body, :question_id,
-         :created_at, :updated_at do
-    expose :answerer, using: User::Entity
-  end
+require 'rails_helper'
 
-  belongs_to :question
-  belongs_to :answerer, class_name: 'User', foreign_key: :user_id, inverse_of: :answers
-
-
+RSpec.describe Answer, type: :model do
+  it { should belong_to(:question) }
+  it { should belong_to(:answerer) }
 end
